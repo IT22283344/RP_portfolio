@@ -17,11 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function initTheme() {
     const savedTheme = localStorage.getItem("sf-theme");
-    const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)")
-      .matches
-      ? "dark"
-      : "light";
-    const initialTheme = savedTheme || preferredTheme;
+    const initialTheme = savedTheme || "light";
 
     root.dataset.theme = initialTheme;
     updateThemeButton(initialTheme);
