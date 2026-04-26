@@ -1264,9 +1264,12 @@ th {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
-  .download-grid,
-  .team-grid {
+  .download-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .doc-card-grid-3 {
