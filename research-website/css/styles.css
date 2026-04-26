@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
 
 :root {
   --bg: #f5faff;
@@ -21,7 +21,7 @@
   --max-width: 1180px;
 }
 
-[data-theme='dark'] {
+[data-theme="dark"] {
   --bg: #071521;
   --bg-elevated: rgba(10, 24, 38, 0.8);
   --surface: #0e2436;
@@ -46,22 +46,32 @@ html {
 
 body {
   min-height: 100vh;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at top left, rgba(59, 175, 218, 0.18), transparent 30%),
-    radial-gradient(circle at bottom right, rgba(0, 201, 167, 0.16), transparent 32%),
+    radial-gradient(
+      circle at top left,
+      rgba(59, 175, 218, 0.18),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(0, 201, 167, 0.16),
+      transparent 32%
+    ),
     var(--bg);
   line-height: 1.7;
   overflow-x: hidden;
 }
 
 body::before {
-  content: '';
+  content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background-image: linear-gradient(rgba(16, 50, 79, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(16, 50, 79, 0.02) 1px, transparent 1px);
+  background-image:
+    linear-gradient(rgba(16, 50, 79, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 50, 79, 0.02) 1px, transparent 1px);
   background-size: 42px 42px;
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.18), transparent 75%);
   opacity: 0.45;
@@ -79,6 +89,7 @@ img {
 
 button,
 input,
+select,
 textarea {
   font: inherit;
 }
@@ -109,12 +120,20 @@ textarea {
   top: 0;
   z-index: 1500;
   backdrop-filter: blur(16px);
-  background: linear-gradient(180deg, rgba(245, 250, 255, 0.94), rgba(245, 250, 255, 0.75));
+  background: linear-gradient(
+    180deg,
+    rgba(245, 250, 255, 0.94),
+    rgba(245, 250, 255, 0.75)
+  );
   border-bottom: 1px solid var(--border);
 }
 
-[data-theme='dark'] .site-header {
-  background: linear-gradient(180deg, rgba(6, 16, 26, 0.92), rgba(6, 16, 26, 0.72));
+[data-theme="dark"] .site-header {
+  background: linear-gradient(
+    180deg,
+    rgba(6, 16, 26, 0.92),
+    rgba(6, 16, 26, 0.72)
+  );
 }
 
 .navbar {
@@ -185,12 +204,19 @@ textarea {
   font-weight: 600;
   border-radius: 14px;
   color: var(--text);
-  transition: transform 0.18s ease, background-color 0.18s ease, color 0.18s ease;
+  transition:
+    transform 0.18s ease,
+    background-color 0.18s ease,
+    color 0.18s ease;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-  background: linear-gradient(135deg, rgba(59, 175, 218, 0.15), rgba(0, 201, 167, 0.16));
+  background: linear-gradient(
+    135deg,
+    rgba(59, 175, 218, 0.15),
+    rgba(0, 201, 167, 0.16)
+  );
   color: var(--primary-dark);
   transform: translateX(2px);
 }
@@ -202,7 +228,10 @@ textarea {
   background: var(--bg-elevated);
   color: var(--text);
   cursor: pointer;
-  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background-color 0.18s ease;
 }
 
 .menu-toggle {
@@ -307,7 +336,10 @@ textarea {
   padding: 0.9rem 1.25rem;
   font-weight: 700;
   cursor: pointer;
-  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background-color 0.18s ease;
 }
 
 .btn-primary {
@@ -363,7 +395,11 @@ textarea {
 .media-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(150deg, rgba(4, 24, 39, 0.08), rgba(4, 24, 39, 0.68));
+  background: linear-gradient(
+    150deg,
+    rgba(4, 24, 39, 0.08),
+    rgba(4, 24, 39, 0.68)
+  );
 }
 
 .hero-badge {
@@ -424,7 +460,11 @@ textarea {
 
 .section-note {
   padding: 1rem 1.1rem;
-  background: linear-gradient(135deg, rgba(59, 175, 218, 0.12), rgba(0, 201, 167, 0.08));
+  background: linear-gradient(
+    135deg,
+    rgba(59, 175, 218, 0.12),
+    rgba(0, 201, 167, 0.08)
+  );
   border-radius: 18px;
   border: 1px solid rgba(59, 175, 218, 0.14);
 }
@@ -469,7 +509,10 @@ textarea {
 .contact-card,
 .stack-card {
   padding: 1.35rem;
-  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease;
 }
 
 .card:hover,
@@ -491,7 +534,11 @@ textarea {
   display: grid;
   place-items: center;
   border-radius: 14px;
-  background: linear-gradient(135deg, rgba(59, 175, 218, 0.16), rgba(0, 201, 167, 0.14));
+  background: linear-gradient(
+    135deg,
+    rgba(59, 175, 218, 0.16),
+    rgba(0, 201, 167, 0.14)
+  );
   color: var(--primary-dark);
   flex: none;
 }
@@ -565,7 +612,7 @@ textarea {
 }
 
 .timeline::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0.3rem;
   bottom: 0.3rem;
@@ -579,7 +626,7 @@ textarea {
 }
 
 .timeline-card::before {
-  content: '';
+  content: "";
   position: absolute;
   left: -1.05rem;
   top: 1.45rem;
@@ -662,6 +709,7 @@ label {
 }
 
 input,
+select,
 textarea {
   width: 100%;
   border: 1px solid var(--border);
@@ -669,7 +717,10 @@ textarea {
   background: var(--surface);
   color: var(--text);
   padding: 0.95rem 1rem;
-  transition: border-color 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    background-color 0.18s ease;
 }
 
 input::placeholder,
@@ -678,10 +729,21 @@ textarea::placeholder {
 }
 
 input:focus,
+select:focus,
 textarea:focus {
   outline: none;
   border-color: var(--secondary);
   box-shadow: 0 0 0 4px rgba(59, 175, 218, 0.14);
+}
+
+.milestone-filter {
+  background: var(--surface);
+  color: var(--text);
+}
+
+a[aria-disabled="true"] {
+  pointer-events: none;
+  opacity: 0.62;
 }
 
 .error {
@@ -748,7 +810,11 @@ th {
 .site-footer {
   margin-top: 3rem;
   border-top: 1px solid var(--border);
-  background: linear-gradient(180deg, rgba(59, 175, 218, 0.08), rgba(15, 76, 129, 0.05));
+  background: linear-gradient(
+    180deg,
+    rgba(59, 175, 218, 0.08),
+    rgba(15, 76, 129, 0.05)
+  );
 }
 
 .footer-inner {
@@ -770,7 +836,9 @@ th {
 .slide-up {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
 }
 
 .slide-up {
