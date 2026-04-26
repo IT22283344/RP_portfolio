@@ -135,6 +135,13 @@ textarea {
   white-space: nowrap;
 }
 
+.logo-sf {
+  width: 4.35rem;
+  height: 4.35rem;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
 .brand-mark {
   width: 2.35rem;
   height: 2.35rem;
