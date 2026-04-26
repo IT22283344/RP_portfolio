@@ -122,8 +122,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const emailInput = document.getElementById("email");
     const messageInput = document.getElementById("message");
     const formMessage = document.getElementById("formMessage");
+    const submitButton = document.getElementById("contactSubmitBtn");
 
-    contactForm.addEventListener("submit", (event) => {
+    const recipientEmail =
+      contactForm.dataset.recipientEmail || "it22215574@my.sliit.lk";
+    const publicKey = (contactForm.dataset.emailjsPublicKey || "").trim();
+    const serviceId = (contactForm.dataset.emailjsServiceId || "").trim();
+    const templateId = (contactForm.dataset.emailjsTemplateId || "").trim();
+
+    const hasEmailJsConfig =
+      publicKey &&
+      serviceId &&
+      templateId &&
+      !publicKey.startsWith("YOUR_") &&
+      !serviceId.startsWith("YOUR_") &&
+      !templateId.startsWith("YOUR_");
+
+    if (window.emailjs && hasEmailJsConfig) {
+      window.emailjs.init({ publicKey });
+    }
+
+    contactForm.addEventListener("submit", async (event) => {
       event.preventDefault();
 
       clearErrors();
@@ -151,10 +170,44 @@ document.addEventListener("DOMContentLoaded", () => {
         isValid = false;
       }
 
-      if (isValid) {
+      if (!isValid) {
+        return;
+      }
+
+      if (!window.emailjs || !hasEmailJsConfig) {
         formMessage.textContent =
-          "Thank you. Your message has been validated successfully.";
+          "Email service is not configured yet. Add your EmailJS keys in contact.html to enable sending.";
+        formMessage.style.color = "#c0392b";
+        return;
+      }
+
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = "Sending...";
+      }
+
+      try {
+        await window.emailjs.send(serviceId, templateId, {
+          from_name: nameInput.value.trim(),
+          from_email: emailInput.value.trim(),
+          message: messageInput.value.trim(),
+          to_email: recipientEmail,
+          reply_to: emailInput.value.trim(),
+        });
+
+        formMessage.textContent =
+          "Message sent successfully. We will get back to you soon.";
+        formMessage.style.color = "#0e8f6d";
         contactForm.reset();
+      } catch (error) {
+        formMessage.textContent =
+          "Failed to send message. Please try again in a moment.";
+        formMessage.style.color = "#c0392b";
+      } finally {
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = "Submit Message";
+        }
       }
     });
   }

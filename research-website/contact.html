@@ -7,7 +7,7 @@
       name="description"
       content="Contact Smart Fisher Lanka for questions, collaboration, or project demonstrations."
     />
-    <meta name="theme-color" content="#0F4C81" />
+    <meta name="theme-color" content="#0A2540" />
     <title>Smart Fisher Lanka | Contact Us</title>
     <link rel="stylesheet" href="css/styles.css" />
   </head>
@@ -69,7 +69,7 @@
             <h1>Talk to the Smart Fisher Lanka team</h1>
             <p>
               Reach out for project demos, viva discussions, or collaboration
-              questions. The form is validated locally before submission.
+              questions. Messages are delivered directly to the project email.
             </p>
             <div class="chips">
               <span class="chip">Email</span>
@@ -79,8 +79,8 @@
           </div>
           <div class="page-media slide-up">
             <img
-              src="https://images.unsplash.com/photo-1515706886582-54c73c5f8e4e?auto=format&fit=crop&w=1600&q=80"
-              alt="Ocean meeting and collaboration background image"
+              src="assets/images/ship.png"
+              alt="Smart Fisher Lanka support and coordination visual"
               loading="eager"
             />
             <div class="media-overlay" aria-hidden="true"></div>
@@ -97,16 +97,16 @@
             </div>
             <div class="contact-line">
               <strong>Email</strong>
-              <span class="muted">researchteam@example.com</span>
+              <span class="muted">it22215574@my.sliit.lk</span>
             </div>
             <div class="contact-line">
               <strong>Phone</strong>
-              <span class="muted">+94 77 123 4567</span>
+              <span class="muted">+94 77 000 0000</span>
             </div>
             <div class="contact-line">
               <strong>Location</strong>
               <span class="muted"
-                >Department of Computing, Example University</span
+                >SLIIT Faculty of Computing, Malabe, Sri Lanka</span
               >
             </div>
             <div class="section-note">
@@ -120,7 +120,14 @@
               <span class="eyebrow">Message Form</span>
               <h2 class="section-title">Send an inquiry</h2>
             </div>
-            <form id="contactForm" novalidate>
+            <form
+              id="contactForm"
+              data-recipient-email="it22215574@my.sliit.lk"
+              data-emailjs-public-key="YOUR_EMAILJS_PUBLIC_KEY"
+              data-emailjs-service-id="YOUR_EMAILJS_SERVICE_ID"
+              data-emailjs-template-id="YOUR_EMAILJS_TEMPLATE_ID"
+              novalidate
+            >
               <div class="form-row">
                 <label for="name">Name</label>
                 <input
@@ -154,7 +161,7 @@
                 <small class="error" id="messageError"></small>
               </div>
 
-              <button class="btn btn-primary" type="submit">
+              <button class="btn btn-primary" type="submit" id="contactSubmitBtn">
                 Submit Message
               </button>
               <p class="success-message" id="formMessage"></p>
@@ -186,6 +193,7 @@
       </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>
