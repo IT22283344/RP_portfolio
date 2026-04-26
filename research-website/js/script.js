@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   bindSmoothScroll();
   bindRevealAnimations();
   bindScrollProgress();
+  bindProposalSelector();
   bindMilestoneFilter();
   bindContactForm();
 
@@ -176,6 +177,54 @@ document.addEventListener("DOMContentLoaded", () => {
         card.style.display = show ? "" : "none";
       });
     });
+  }
+
+  function bindProposalSelector() {
+    const proposalSelect = document.getElementById("proposalMember");
+    const proposalView = document.querySelector("[data-proposal-view]");
+    const proposalDownload = document.querySelector("[data-proposal-download]");
+    const proposalPicker = document.querySelector("[data-proposal-picker]");
+    const proposalToggle = document.querySelector("[data-proposal-toggle]");
+
+    if (
+      !proposalSelect ||
+      !proposalView ||
+      !proposalDownload ||
+      !proposalPicker ||
+      !proposalToggle
+    ) {
+      return;
+    }
+
+    const updateLinks = () => {
+      const selectedFile = proposalSelect.value;
+      proposalView.href = selectedFile;
+      proposalDownload.href = selectedFile;
+    };
+
+    const closePicker = () => {
+      proposalPicker.classList.remove("is-open");
+      proposalToggle.setAttribute("aria-expanded", "false");
+    };
+
+    const togglePicker = () => {
+      const isOpen = proposalPicker.classList.toggle("is-open");
+      proposalToggle.setAttribute("aria-expanded", String(isOpen));
+    };
+
+    proposalSelect.addEventListener("change", updateLinks);
+    proposalToggle.addEventListener("click", togglePicker);
+    document.addEventListener("click", (event) => {
+      if (!proposalPicker.contains(event.target)) {
+        closePicker();
+      }
+    });
+    proposalPicker.addEventListener("mouseleave", () => {
+      if (!proposalPicker.classList.contains("is-open")) {
+        closePicker();
+      }
+    });
+    updateLinks();
   }
 
   function showError(elementId, message) {
