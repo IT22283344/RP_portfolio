@@ -49,8 +49,16 @@ body {
   font-family: "Manrope", sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at top left, rgba(125, 211, 252, 0.2), transparent 34%),
-    radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.18), transparent 36%),
+    radial-gradient(
+      circle at top left,
+      rgba(125, 211, 252, 0.2),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(56, 189, 248, 0.18),
+      transparent 36%
+    ),
     var(--bg);
   line-height: 1.7;
   overflow-x: hidden;
@@ -408,7 +416,28 @@ textarea {
   height: 100%;
   object-fit: cover;
 }
+/* Domain page image only */
+.page-media.domain-media {
+  min-height: 0 !important;
+  height: auto !important;
+  padding: 0 !important;
+  line-height: 0;
+}
 
+.page-media.domain-media .domain-image {
+  position: static !important;
+  inset: auto !important;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+  object-position: center !important;
+}
+.domain-media img {
+  position: relative !important;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
 .media-overlay {
   position: absolute;
   inset: 0;
