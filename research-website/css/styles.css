@@ -221,6 +221,7 @@ textarea {
   font-weight: 600;
   border-radius: 14px;
   color: var(--text);
+  white-space: nowrap;
   transition:
     transform 0.18s ease,
     background-color 0.18s ease,
@@ -1192,7 +1193,7 @@ th {
   }
 }
 
-@media (min-width: 720px) {
+@media (min-width: 1120px) {
   .menu-toggle {
     display: none;
   }
@@ -1208,11 +1209,18 @@ th {
     box-shadow: none;
   }
 
+  .nav-links a {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.94rem;
+  }
+
   .nav-links a:hover,
   .nav-links a.active {
     transform: translateY(-1px);
   }
+}
 
+@media (min-width: 720px) {
   .hero-grid,
   .page-hero-grid,
   .contact-layout,
