@@ -108,26 +108,113 @@
             </div>
           </div>
 
-          <div class="hero-media slide-up">
-            <img
-              src="assets/images/fish_onboard.png"
-              alt="Fishing vessel and onboard catch from Sri Lankan coastal waters"
-              loading="eager"
-            />
-            <div class="media-overlay" aria-hidden="true"></div>
-            <div class="hero-badge" aria-hidden="true">
-              <div class="mini-card">
+          <div
+            class="hero-media hero-slider slide-up"
+            data-hero-slider
+            aria-roledescription="carousel"
+            aria-label="Smart Fisher Lanka feature image slider"
+          >
+            <div class="hero-slide is-active" data-hero-slide>
+              <img
+                src="assets/images/ai_ocean_map.png"
+                alt="AI ocean map showing fish zone prediction insights"
+                loading="eager"
+              />
+              <div class="media-overlay" aria-hidden="true"></div>
+              <div class="hero-slide-panel">
+                <strong>Fish Zone Prediction</strong>
+                <span>AI ocean maps for catch opportunity guidance</span>
+              </div>
+            </div>
+
+            <div class="hero-slide" data-hero-slide>
+              <img
+                src="assets/images/ai_fish_scan.png"
+                alt="AI fish quality checking interface"
+                loading="lazy"
+              />
+              <div class="media-overlay" aria-hidden="true"></div>
+              <div class="hero-slide-panel">
+                <strong>Quality Check</strong>
+                <span>Image-based fish grading and freshness support</span>
+              </div>
+            </div>
+
+            <div class="hero-slide" data-hero-slide>
+              <img
+                src="assets/images/ai_ship_route.png"
+                alt="AI ship route and trip cost planning interface"
+                loading="lazy"
+              />
+              <div class="media-overlay" aria-hidden="true"></div>
+              <div class="hero-slide-panel">
+                <strong>Trip Cost Planning</strong>
+                <span>Route, safety, and fuel-aware trip decisions</span>
+              </div>
+            </div>
+
+            <div class="hero-slide" data-hero-slide>
+              <img
+                src="assets/images/ai_market_graph.png"
+                alt="Market analysis graph for fish price prediction"
+                loading="lazy"
+              />
+              <div class="media-overlay" aria-hidden="true"></div>
+              <div class="hero-slide-panel">
+                <strong>Market Analysis</strong>
+                <span>Price prediction and selling strategy insights</span>
+              </div>
+            </div>
+
+            <div class="hero-slide" data-hero-slide>
+              <img
+                src="assets/images/fish_onboard.png"
+                alt="Fishing vessel and onboard catch from Sri Lankan coastal waters"
+                loading="lazy"
+              />
+              <div class="media-overlay" aria-hidden="true"></div>
+              <div class="hero-slide-panel">
                 <strong>Live Sea Conditions</strong>
-                <span>Wave, wind, and weather context</span>
+                <span>Wave, wind, and weather context for safer trips</span>
               </div>
-              <div class="mini-card">
-                <strong>Catch Opportunity</strong>
-                <span>Species and location guidance</span>
-              </div>
-              <div class="mini-card">
-                <strong>Safety Alerts</strong>
-                <span>Route and storm risk warnings</span>
-              </div>
+            </div>
+
+            <div class="hero-slider-controls" aria-label="Choose hero slide">
+              <button
+                class="hero-slider-dot is-active"
+                type="button"
+                data-hero-dot
+                aria-label="Show fish zone prediction slide"
+                aria-pressed="true"
+              ></button>
+              <button
+                class="hero-slider-dot"
+                type="button"
+                data-hero-dot
+                aria-label="Show quality check slide"
+                aria-pressed="false"
+              ></button>
+              <button
+                class="hero-slider-dot"
+                type="button"
+                data-hero-dot
+                aria-label="Show trip cost planning slide"
+                aria-pressed="false"
+              ></button>
+              <button
+                class="hero-slider-dot"
+                type="button"
+                data-hero-dot
+                aria-label="Show market analysis slide"
+                aria-pressed="false"
+              ></button>
+              <button
+                class="hero-slider-dot"
+                type="button"
+                data-hero-dot
+                aria-label="Show live sea conditions slide"
+                aria-pressed="false"
+              ></button>
             </div>
           </div>
         </div>
