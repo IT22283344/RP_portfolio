@@ -268,7 +268,8 @@ document.addEventListener("DOMContentLoaded", () => {
           from_email: emailInput.value.trim(),
           message: messageInput.value.trim(),
           to_email:
-            contactForm.dataset.recipientEmail || "it22215574@my.sliit.lk",
+            contactForm.dataset.recipientEmail ||
+            "Ravindujayaweera123@gmail.com",
           reply_to: emailInput.value.trim(),
         });
 
