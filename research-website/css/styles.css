@@ -406,7 +406,7 @@ textarea {
 .page-media {
   position: relative;
   overflow: hidden;
-  min-height: 24rem;
+  min-height: 32rem;
 }
 
 .hero-media img,
@@ -415,7 +415,8 @@ textarea {
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  background: linear-gradient(135deg, rgba(42, 143, 199, 0.08) 0%, rgba(125, 211, 252, 0.06) 100%);
 }
 
 .hero-slider {
