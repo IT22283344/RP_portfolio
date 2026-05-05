@@ -149,7 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
         window.clearInterval(sliderTimer);
         sliderTimer = window.setInterval(() => {
           showSlide(activeIndex + 1);
-        }, 4200);
+        }, 3500);
       };
 
       dots.forEach((dot, index) => {
