@@ -385,7 +385,6 @@ textarea {
 .download-card,
 .timeline-card,
 .team-card,
-.contact-card,
 .stack-card {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
@@ -747,7 +746,6 @@ textarea {
 .download-card,
 .team-card,
 .timeline-card,
-.contact-card,
 .stack-card {
   padding: 1.35rem;
   transition:
@@ -760,7 +758,6 @@ textarea {
 .download-card:hover,
 .team-card:hover,
 .timeline-card:hover,
-.contact-card:hover,
 .stack-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow);
