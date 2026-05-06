@@ -1072,6 +1072,13 @@ textarea {
   align-items: start;
 }
 
+.contact-card {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
 .contact-card .contact-line {
   display: grid;
   gap: 0.3rem;
