@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="AI Solutions for Smart Fisher Lanka" />
+    <meta name="theme-color" content="#0A2540" />
+    <title>Smart Fisher Lanka | Solution</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+      .alt-grid {
+        align-items: center;
+      }
+      @media (min-width: 768px) {
+        .alt-grid.reverse {
+          direction: rtl;
+        }
+        .alt-grid.reverse > * {
+          direction: ltr;
+        }
+      }
+      .solution-image {
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: transform 0.4s ease;
+      }
+      .solution-image:hover {
+        transform: scale(1.02);
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="scroll-progress" aria-hidden="true">
+      <span class="scroll-progress__bar"></span>
+    </div>
+
+    <header class="site-header">
+      <div class="container navbar">
+        <a class="brand" href="index.html" aria-label="Smart Fisher Lanka home">
+          <img class="logo-sf" src="assets/images/SFLLogo.png" alt="Smart Fisher Lanka logo" loading="lazy" />
+          <span>Smart Fisher Lanka</span>
+        </a>
+
+        <div class="navbar-actions">
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle color theme" aria-pressed="false"></button>
+          <button class="menu-toggle" type="button" data-menu-toggle aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">☰</button>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="domain.html">Domain</a></li>
+          <li><a class="active" href="solution.html">Solution</a></li>
+          <li><a href="milestones.html">Milestones</a></li>
+          <li><a href="documents.html">Documents</a></li>
+          <li><a href="presentations.html">Presentations</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="page-hero">
+        <div class="container page-hero-grid">
+          <div class="page-hero-copy slide-up">
+            <span class="eyebrow">Our Solution</span>
+            <h1>Comprehensive AI Tools for Coastal Fishing</h1>
+            <p>
+              By combining environmental intelligence, market analysis, and deep learning, our platform provides actionable solutions for sustainable and efficient operations.
+            </p>
+            <div class="chips">
+              <span class="chip">Ocean Data</span>
+              <span class="chip">Market Predictor</span>
+              <span class="chip">Quality Grader</span>
+              <span class="chip">Trip Planner</span>
+            </div>
+          </div>
+
+          <div class="page-media domain-media slide-up" style="transform: scale(1);">
+            <img src="assets/images/ship.png" alt="Fishing vessel on ocean" class="domain-image" style="border-radius: var(--radius-lg); filter: drop-shadow(0 15px 35px rgba(10, 37, 64, 0.15));" loading="eager" />
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-alt">
+        <div class="container section-shell">
+          <!-- 1. Fish Zone Prediction -->
+          <div class="grid grid-2 alt-grid" style="margin-bottom: 4rem;">
+            <article class="card feature-card fade-in">
+              <span class="icon-badge" aria-hidden="true" style="color: #06b6d4; background: rgba(6, 182, 212, 0.15);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </span>
+              <h3 class="feature-title">Fish Zone Prediction with Ocean Data Intelligence</h3>
+              <p>We provide an AI-based system that predicts fish-rich zones using environmental and oceanographic data such as sea surface temperature, chlorophyll concentration, and ocean currents. The system analyzes these factors using machine learning models to identify high-probability fishing areas.</p>
+              <p>This enables fishermen to reduce search time, save fuel, and increase catch efficiency by targeting the most suitable fishing locations based on real-time and historical data patterns.</p>
+            </article>
+            <div class="solution-image fade-in">
+              <img src="assets/images/ai_ocean_map.png" alt="AI Ocean Map" style="width: 100%; height: auto; object-fit: cover; aspect-ratio: 4/3; display: block;" loading="lazy" />
+            </div>
+          </div>
+
+          <!-- 2. Fish Price Prediction -->
+          <div class="grid grid-2 alt-grid reverse" style="margin-bottom: 4rem;">
+            <article class="card feature-card fade-in">
+              <span class="icon-badge" aria-hidden="true" style="color: #10b981; background: rgba(16, 185, 129, 0.15);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+              </span>
+              <h3 class="feature-title">Fish Price Prediction with Market Analysis</h3>
+              <p>Our platform includes a machine learning-based price prediction system that analyzes historical price trends, seasonal patterns, and external factors such as weather and demand.</p>
+              <p>The system generates future price estimates to help fishermen make better selling decisions, improving profitability and reducing the risk of price fluctuations in the market.</p>
+            </article>
+            <div class="solution-image fade-in">
+              <img src="assets/images/ai_market_graph.png" alt="AI Market Graph" style="width: 100%; height: auto; object-fit: cover; aspect-ratio: 4/3; display: block;" loading="lazy" />
+            </div>
+          </div>
+
+          <!-- 3. Fish Quality Grading System -->
+          <div class="grid grid-2 alt-grid" style="margin-bottom: 4rem;">
+            <article class="card feature-card fade-in">
+              <span class="icon-badge" aria-hidden="true" style="color: #f59e0b; background: rgba(245, 158, 11, 0.15);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              </span>
+              <h3 class="feature-title">AI-Based Fish Quality Grading System</h3>
+              <p>We implement a deep learning-based image classification system to automatically assess fish quality. Using Convolutional Neural Networks (CNNs), the system analyzes fish images to classify freshness and grade levels.</p>
+              <p>This ensures consistent and accurate quality evaluation, reducing manual errors and supporting better pricing and handling decisions in the fisheries supply chain.</p>
+            </article>
+            <div class="solution-image fade-in">
+              <img src="assets/images/ai_fish_scan.png" alt="AI Fish Scan" style="width: 100%; height: auto; object-fit: cover; aspect-ratio: 4/3; display: block;" loading="lazy" />
+            </div>
+          </div>
+
+          <!-- 4. Trip Cost Prediction -->
+          <div class="grid grid-2 alt-grid reverse">
+            <article class="card feature-card fade-in">
+              <span class="icon-badge" aria-hidden="true" style="color: #6366f1; background: rgba(99, 102, 241, 0.15);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              </span>
+              <h3 class="feature-title">Smart Trip Cost Prediction and Planning</h3>
+              <p>The system estimates trip cost and fuel consumption using a hybrid approach combining mathematical models and machine learning. Factors such as travel distance, engine power, weather conditions, and trip duration are analyzed to generate cost predictions.</p>
+              <p>This helps fishermen plan trips more efficiently, reduce unnecessary expenses, and improve overall operational decision-making.</p>
+            </article>
+            <div class="solution-image fade-in">
+              <img src="assets/images/ai_ship_route.png" alt="AI Ship Route" style="width: 100%; height: auto; object-fit: cover; aspect-ratio: 4/3; display: block;" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <svg class="footer-wave" viewBox="0 0 1440 120" aria-hidden="true" preserveAspectRatio="none"><path d="M0,64L48,58.7C96,53,192,43,288,48C384,53,480,75,576,80C672,85,768,75,864,64C960,53,1056,43,1152,53.3C1248,64,1344,96,1392,112L1440,120V0H1392C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0H0Z"></path></svg>
+      <div class="container footer-inner">
+        <p>Smart Fisher Lanka | 2026</p>
+        <nav class="footer-links" aria-label="Footer quick links">
+          <a href="index.html">Home</a>
+          <a href="documents.html">Documents</a>
+          <a href="presentations.html">Presentations</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

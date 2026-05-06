@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   bindSmoothScroll();
   bindRevealAnimations();
   bindScrollProgress();
+  bindHeroSlider();
   bindProposalSelector();
   bindMilestoneFilter();
   bindContactForm();
@@ -114,18 +115,78 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("resize", updateProgress);
   }
 
+  function bindHeroSlider() {
+    const sliders = document.querySelectorAll("[data-hero-slider]");
+    if (!sliders.length) return;
+
+    sliders.forEach((slider) => {
+      const slides = Array.from(slider.querySelectorAll("[data-hero-slide]"));
+      const dots = Array.from(slider.querySelectorAll("[data-hero-dot]"));
+      if (slides.length < 2) return;
+
+      let activeIndex = 0;
+      let sliderTimer;
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+
+      const showSlide = (nextIndex) => {
+        activeIndex = (nextIndex + slides.length) % slides.length;
+
+        slides.forEach((slide, index) => {
+          slide.classList.toggle("is-active", index === activeIndex);
+        });
+
+        dots.forEach((dot, index) => {
+          const isActive = index === activeIndex;
+          dot.classList.toggle("is-active", isActive);
+          dot.setAttribute("aria-pressed", String(isActive));
+        });
+      };
+
+      const startSlider = () => {
+        if (reduceMotion) return;
+        window.clearInterval(sliderTimer);
+        sliderTimer = window.setInterval(() => {
+          showSlide(activeIndex + 1);
+        }, 3500);
+      };
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+          showSlide(index);
+          startSlider();
+        });
+      });
+
+      slider.addEventListener("mouseenter", () => {
+        window.clearInterval(sliderTimer);
+      });
+      slider.addEventListener("mouseleave", startSlider);
+      slider.addEventListener("focusin", () => {
+        window.clearInterval(sliderTimer);
+      });
+      slider.addEventListener("focusout", startSlider);
+
+      showSlide(0);
+      startSlider();
+    });
+  }
+
   function bindContactForm() {
     const contactForm = document.getElementById("contactForm");
     if (!contactForm) return;
 
     const nameInput = document.getElementById("name");
     const emailInput = document.getElementById("email");
+    const subjectInput = document.getElementById("subject");
     const messageInput = document.getElementById("message");
     const formMessage = document.getElementById("formMessage");
     const submitButton = document.getElementById("contactSubmitBtn");
+    const mailPopup = document.querySelector("[data-mail-popup]");
+    const formSubject = contactForm.querySelector("[data-form-subject]");
+    const submitButtonText = submitButton ? submitButton.textContent : "";
 
-    const recipientEmail =
-      contactForm.dataset.recipientEmail || "it22215574@my.sliit.lk";
     const publicKey = (contactForm.dataset.emailjsPublicKey || "").trim();
     const serviceId = (contactForm.dataset.emailjsServiceId || "").trim();
     const templateId = (contactForm.dataset.emailjsTemplateId || "").trim();
@@ -175,9 +236,24 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       if (!window.emailjs || !hasEmailJsConfig) {
+        const subject =
+          subjectInput && subjectInput.value.trim()
+            ? subjectInput.value.trim()
+            : "Smart Fisher Lanka contact message";
+
+        if (formSubject) {
+          formSubject.value = subject;
+        }
+
+        showMailPopup(
+          "Message submitted",
+          "Please check your email if FormSubmit asks for activation.",
+        );
         formMessage.textContent =
-          "Email service is not configured yet. Add your EmailJS keys in contact.html to enable sending.";
-        formMessage.style.color = "#c0392b";
+          "Message submitted. If this is the first message, confirm FormSubmit from the project email inbox.";
+        formMessage.style.color = "#0e8f6d";
+        contactForm.submit();
+        window.setTimeout(() => contactForm.reset(), 700);
         return;
       }
 
@@ -191,13 +267,16 @@ document.addEventListener("DOMContentLoaded", () => {
           from_name: nameInput.value.trim(),
           from_email: emailInput.value.trim(),
           message: messageInput.value.trim(),
-          to_email: recipientEmail,
+          to_email:
+            contactForm.dataset.recipientEmail ||
+            "Ravindujayaweera123@gmail.com",
           reply_to: emailInput.value.trim(),
         });
 
         formMessage.textContent =
           "Message sent successfully. We will get back to you soon.";
         formMessage.style.color = "#0e8f6d";
+        showMailPopup("Message sent", "Thank you for contacting us.");
         contactForm.reset();
       } catch (error) {
         formMessage.textContent =
@@ -206,10 +285,31 @@ document.addEventListener("DOMContentLoaded", () => {
       } finally {
         if (submitButton) {
           submitButton.disabled = false;
-          submitButton.textContent = "Submit Message";
+          submitButton.textContent = submitButtonText;
         }
       }
     });
+
+    function showMailPopup(
+      title = "Mail app opening",
+      text = "Your message is ready to send.",
+    ) {
+      if (!mailPopup) return;
+
+      const popupTitle = mailPopup.querySelector("strong");
+      const popupText = mailPopup.querySelector("span");
+
+      if (popupTitle) popupTitle.textContent = title;
+      if (popupText) popupText.textContent = text;
+
+      mailPopup.setAttribute("aria-hidden", "false");
+      mailPopup.classList.add("is-visible");
+
+      window.setTimeout(() => {
+        mailPopup.classList.remove("is-visible");
+        mailPopup.setAttribute("aria-hidden", "true");
+      }, 3600);
+    }
   }
 
   function bindMilestoneFilter() {

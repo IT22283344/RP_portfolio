@@ -52,6 +52,7 @@
         <ul class="nav-links" id="navLinks">
           <li><a class="active" href="index.html">Home</a></li>
           <li><a href="domain.html">Domain</a></li>
+          <li><a href="solution.html">Solution</a></li>
           <li><a href="milestones.html">Milestones</a></li>
           <li><a href="documents.html">Documents</a></li>
           <li><a href="presentations.html">Presentations</a></li>
@@ -107,31 +108,121 @@
             </div>
           </div>
 
-          <div class="hero-media slide-up">
-            <img
-              src="assets/images/fish_onboard.png"
-              alt="Fishing vessel and onboard catch from Sri Lankan coastal waters"
-              loading="eager"
-            />
-            <div class="media-overlay" aria-hidden="true"></div>
-            <div class="hero-badge" aria-hidden="true">
-              <div class="mini-card">
+          <div
+            class="hero-media hero-slider slide-up"
+            data-hero-slider
+            aria-roledescription="carousel"
+            aria-label="Smart Fisher Lanka feature image slider"
+          >
+            <div class="hero-slide is-active" data-hero-slide>
+              <img
+                src="assets/images/fishzone.png"
+                alt="Fish zone prediction showing catch opportunity areas"
+                loading="eager"
+              />
+              <div class="media-overlay" aria-hidden="true"></div>
+              <div class="hero-slide-panel">
+                <strong>Fish Zone Prediction</strong>
+                <span>AI ocean maps for catch opportunity guidance</span>
+              </div>
+            </div>
+
+            <div class="hero-slide" data-hero-slide>
+              <img
+                src="assets/images/fishquality.png"
+                alt="Fish quality grading and freshness assessment"
+                loading="lazy"
+              />
+              <div class="media-overlay" aria-hidden="true"></div>
+              <div class="hero-slide-panel">
+                <strong>Quality Check</strong>
+                <span>Image-based fish grading and freshness support</span>
+              </div>
+            </div>
+
+            <div class="hero-slide" data-hero-slide>
+              <img
+                src="assets/images/fishtripcost.png"
+                alt="Fish boat trip planning with route and cost analysis"
+                loading="lazy"
+              />
+              <div class="media-overlay" aria-hidden="true"></div>
+              <div class="hero-slide-panel">
+                <strong>Trip Cost Planning</strong>
+                <span>Route, safety, and fuel-aware trip decisions</span>
+              </div>
+            </div>
+
+            <div class="hero-slide" data-hero-slide>
+              <img
+                src="assets/images/fishpriceprediction.png"
+                alt="Fish market price prediction and analysis"
+                loading="lazy"
+              />
+              <div class="media-overlay" aria-hidden="true"></div>
+              <div class="hero-slide-panel">
+                <strong>Market Analysis</strong>
+                <span>Price prediction and selling strategy insights</span>
+              </div>
+            </div>
+
+            <div class="hero-slide" data-hero-slide>
+              <img
+                src="assets/images/liveconditions.png"
+                alt="Live sea conditions showing wave, wind and weather data"
+                loading="lazy"
+              />
+              <div class="media-overlay" aria-hidden="true"></div>
+              <div class="hero-slide-panel">
                 <strong>Live Sea Conditions</strong>
-                <span>Wave, wind, and weather context</span>
+                <span>Wave, wind, and weather context for safer trips</span>
               </div>
-              <div class="mini-card">
-                <strong>Catch Opportunity</strong>
-                <span>Species and location guidance</span>
-              </div>
-              <div class="mini-card">
-                <strong>Safety Alerts</strong>
-                <span>Route and storm risk warnings</span>
-              </div>
+            </div>
+
+            <div class="hero-slider-controls" aria-label="Choose hero slide">
+              <button
+                class="hero-slider-dot is-active"
+                type="button"
+                data-hero-dot
+                aria-label="Show fish zone prediction slide"
+                aria-pressed="true"
+              ></button>
+              <button
+                class="hero-slider-dot"
+                type="button"
+                data-hero-dot
+                aria-label="Show quality check slide"
+                aria-pressed="false"
+              ></button>
+              <button
+                class="hero-slider-dot"
+                type="button"
+                data-hero-dot
+                aria-label="Show trip cost planning slide"
+                aria-pressed="false"
+              ></button>
+              <button
+                class="hero-slider-dot"
+                type="button"
+                data-hero-dot
+                aria-label="Show market analysis slide"
+                aria-pressed="false"
+              ></button>
+              <button
+                class="hero-slider-dot"
+                type="button"
+                data-hero-dot
+                aria-label="Show live sea conditions slide"
+                aria-pressed="false"
+              ></button>
             </div>
           </div>
         </div>
 
-        <div class="container trust-strip fade-in" aria-label="Project trust highlights">
+        <div
+          class="container trust-strip fade-in"
+          aria-label="Project trust highlights"
+        >
           <div class="trust-chip">
             <strong>4 Core Modules</strong>
             <span>Quality, zone, planning, and price intelligence</span>
@@ -165,7 +256,8 @@
             <h2 class="section-title">From sea data to safer actions</h2>
             <p class="section-lead">
               Inspired by modern product storytelling layouts, this journey
-              shows how Smart Fisher Lanka converts data into practical guidance.
+              shows how Smart Fisher Lanka converts data into practical
+              guidance.
             </p>
           </div>
 
@@ -183,8 +275,8 @@
               <span class="journey-step-no">02</span>
               <h3>Run AI Analysis</h3>
               <p>
-                Lightweight models evaluate quality, location opportunity,
-                route safety, and likely market value using contextual signals.
+                Lightweight models evaluate quality, location opportunity, route
+                safety, and likely market value using contextual signals.
               </p>
             </article>
 
@@ -615,6 +707,12 @@
               >
             </article>
           </div>
+
+          <div style="text-align: center; margin-top: 2rem">
+            <a class="btn btn-primary" href="documents.html"
+              >See All Documents</a
+            >
+          </div>
         </div>
       </section>
 
@@ -646,7 +744,9 @@
                 Works on ocean-weather data interpretation and predictive
                 modeling for zone-level decision support.
               </p>
-              <p><strong>Assigned Component:</strong> Fishing Zone Prediction</p>
+              <p>
+                <strong>Assigned Component:</strong> Fishing Zone Prediction
+              </p>
             </article>
 
             <article class="team-card fade-in">
@@ -665,7 +765,10 @@
                 Guides planning, supervises delivery, and keeps the research
                 direction aligned with academic goals.
               </p>
-              <p><strong>Assigned Component:</strong> Fish Quality Grading (Image-based AI)</p>
+              <p>
+                <strong>Assigned Component:</strong> Fish Quality Grading
+                (Image-based AI)
+              </p>
             </article>
 
             <article class="team-card fade-in">
@@ -684,7 +787,10 @@
                 Designs and validates trip-cost intelligence and safe journey
                 recommendation logic.
               </p>
-              <p><strong>Assigned Component:</strong> Ship Route and Tour Planning</p>
+              <p>
+                <strong>Assigned Component:</strong> Ship Route and Tour
+                Planning
+              </p>
             </article>
 
             <article class="team-card fade-in">
@@ -703,7 +809,9 @@
                 Focuses on market behavior modeling, value forecasting, and
                 buyer-oriented recommendation insights.
               </p>
-              <p><strong>Assigned Component:</strong> Market Price Prediction</p>
+              <p>
+                <strong>Assigned Component:</strong> Market Price Prediction
+              </p>
             </article>
           </div>
         </div>
@@ -731,8 +839,14 @@
               <div>
                 <h3>Supervisor</h3>
                 <p><strong>Name:</strong> Prof. Pradeep Abeygunawardhena</p>
-                <p><strong>Position:</strong> Senior Lecturer,DEAN (Faculty of IT), SLIIT</p>
-                <p><strong>Affiliation:</strong> Faculty of Computing, Sri Lanka Institute of Information Technology</p>
+                <p>
+                  <strong>Position:</strong> Senior Lecturer,DEAN (Faculty of
+                  IT), SLIIT
+                </p>
+                <p>
+                  <strong>Affiliation:</strong> Faculty of Computing, Sri Lanka
+                  Institute of Information Technology
+                </p>
               </div>
             </article>
 
@@ -747,7 +861,10 @@
                 <h3>Co-Supervisor</h3>
                 <p><strong>Name:</strong> Mr. Ashivinda Iddamalgoda</p>
                 <p><strong>Position:</strong> Lecturer, SLIIT</p>
-                <p><strong>Affiliation:</strong> Faculty of Computing, Sri Lanka Institute of Information Technology</p>
+                <p>
+                  <strong>Affiliation:</strong> Faculty of Computing, Sri Lanka
+                  Institute of Information Technology
+                </p>
               </div>
             </article>
           </div>

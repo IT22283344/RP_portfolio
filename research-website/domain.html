@@ -10,6 +10,67 @@
     <meta name="theme-color" content="#0A2540" />
     <title>Smart Fisher Lanka | Domain</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <style>
+      .objective-list {
+        list-style: none;
+        padding: 0;
+        display: grid;
+        gap: 0.75rem;
+        margin-top: 1rem;
+      }
+      .objective-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        font-size: 0.95rem;
+        color: var(--text);
+      }
+      .objective-list li::before {
+        content: "";
+        display: inline-block;
+        width: 1.25rem;
+        height: 1.25rem;
+        flex-shrink: 0;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232a8fc7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-top: 0.15rem;
+      }
+      [data-theme="dark"] .objective-list li::before {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2338bdf8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+      }
+
+      /* Domain Image Enhancements */
+      .domain-media {
+        transition:
+          transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+          filter 0.5s ease;
+        transform: scale(1.1); /* Makes the image somewhat bigger by default */
+        transform-origin: center center;
+        filter: drop-shadow(0 15px 35px rgba(10, 37, 64, 0.15));
+        border-radius: var(--radius-lg);
+        z-index: 10;
+      }
+      .domain-media:hover {
+        transform: scale(1.18) translateY(-8px);
+        filter: drop-shadow(0 25px 45px rgba(10, 37, 64, 0.25));
+      }
+      [data-theme="dark"] .domain-media {
+        filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.4));
+      }
+      [data-theme="dark"] .domain-media:hover {
+        filter: drop-shadow(0 25px 45px rgba(0, 0, 0, 0.55));
+      }
+      @media (max-width: 768px) {
+        .domain-media {
+          transform: scale(1.02);
+          margin-top: 1rem;
+        }
+        .domain-media:hover {
+          transform: scale(1.08) translateY(-4px);
+        }
+      }
+    </style>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -52,6 +113,7 @@
         <ul class="nav-links" id="navLinks">
           <li><a href="index.html">Home</a></li>
           <li><a class="active" href="domain.html">Domain</a></li>
+          <li><a href="solution.html">Solution</a></li>
           <li><a href="milestones.html">Milestones</a></li>
           <li><a href="documents.html">Documents</a></li>
           <li><a href="presentations.html">Presentations</a></li>
@@ -80,13 +142,13 @@
             </div>
           </div>
 
-          <div class="page-media slide-up">
+          <div class="page-media domain-media slide-up">
             <img
-              src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1600&q=80"
+              src="assets/images/domain.png"
+              class="domain-image"
               alt="Satellite style ocean and weather view over the sea"
               loading="eager"
             />
-            <div class="media-overlay" aria-hidden="true"></div>
           </div>
         </div>
       </section>
@@ -100,92 +162,328 @@
           </div>
 
           <div class="grid grid-2">
-            <article class="card fade-in">
-              <h3>Literature Survey</h3>
+            <article class="card feature-card fade-in">
+              <span class="icon-badge" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+              </span>
+              <h3 class="feature-title">Literature Survey</h3>
               <p>
-                Existing coastal decision support studies show that weather
-                forecasting, vessel tracking, and machine learning can reduce
-                uncertainty. However, many solutions are built for broader
-                maritime use and do not reflect the day-to-day constraints faced
-                by Sri Lankan fishing crews.
+                Recent developments in Artificial Intelligence (AI) and Machine
+                Learning (ML) have significantly improved decision-making in the
+                fisheries sector. Modern systems use environmental data such as
+                sea surface temperature, chlorophyll levels, and ocean currents
+                to predict fish-rich zones more accurately than traditional
+                methods. AI-driven heatmaps and ocean data analysis help
+                identify high-probability fishing areas, reducing search time
+                and fuel usage.
               </p>
+
               <p>
-                This research reviews academic work on marine forecasting, fish
-                availability prediction, safety systems, and AI-based advisory
-                platforms to identify practical methods that can be adapted for
-                local use.
+                Machine learning techniques are also used for fish price
+                prediction by analyzing historical trends, seasonal patterns,
+                and market conditions. In addition, deep learning models such as
+                Convolutional Neural Networks (CNNs) are applied for fish
+                classification and quality grading using image data. Hybrid
+                approaches are further used to estimate trip cost and fuel
+                consumption based on operational and environmental factors.
+                However, most existing solutions focus on individual tasks
+                rather than combining all these functionalities into a single
+                system.
               </p>
             </article>
 
-            <article class="card fade-in">
-              <h3>Research Gap</h3>
+            <article class="card feature-card fade-in">
+              <span class="icon-badge" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+              </span>
+              <h3 class="feature-title">Research Gap</h3>
               <p>
-                Most available tools either provide raw marine data or focus on
-                isolated functions such as weather reports. They rarely combine
-                catch guidance, safety alerts, and user-friendly explanations in
-                a single localized platform.
+                Most existing fisheries tools provide only partial solutions,
+                such as fish zone prediction or market analysis. These systems
+                often present complex data that is difficult for fishermen to
+                interpret and use effectively in real-world situations.
               </p>
+
               <p>
-                Smart Fisher Lanka addresses this gap by blending multiple
-                signals into one decision workflow designed for fishermen, not
-                just analysts.
+                There is a lack of integrated, user-friendly systems that
+                combine fish location prediction, price forecasting, quality
+                grading, and trip cost estimation into one platform for
+                practical decision-making.
               </p>
             </article>
 
-            <article class="card fade-in">
-              <h3>Research Problem</h3>
+            <article class="card feature-card fade-in">
+              <span class="icon-badge" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <circle cx="12" cy="12" r="6"></circle>
+                  <circle cx="12" cy="12" r="2"></circle>
+                </svg>
+              </span>
+              <h3 class="feature-title">Research Problem</h3>
               <p>
-                Fishermen often leave shore with incomplete situational
-                awareness, which increases the risk of unsafe trips, wasted
-                fuel, and lower catch efficiency.
+                Fishermen often make decisions without accurate and complete
+                information, which leads to wasted fuel, inefficient trips, and
+                reduced income. The absence of reliable tools for predicting
+                fish zones, market prices, quality, and trip costs increases
+                uncertainty in fishing operations.
               </p>
+
               <p>
-                The problem is how to provide timely, accurate, and
-                easy-to-understand AI recommendations that support safer and
-                more sustainable fishing decisions.
+                The main problem is how to provide accurate, real-time, and
+                easy-to-understand recommendations that support efficient and
+                safe fishing decisions.
               </p>
             </article>
 
-            <article class="card fade-in">
-              <h3>Research Objectives</h3>
+            <article class="card feature-card fade-in">
+              <span class="icon-badge" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"
+                  ></path>
+                  <line x1="4" y1="22" x2="4" y2="15"></line>
+                </svg>
+              </span>
+              <h3 class="feature-title">Research Objectives</h3>
               <p>
-                Build a decision support prototype that identifies favourable
-                fishing windows, warns about dangerous conditions, and
-                summarizes relevant insights in a simple interface.
+                The objective of this research is to develop an AI-based
+                decision support system to improve fishing efficiency and reduce
+                operational risks.
               </p>
+
+              <ul class="objective-list">
+                <li>Predict fish-rich zones using environmental data</li>
+                <li>Forecast fish market prices using machine learning</li>
+                <li>Automate fish quality grading using deep learning</li>
+                <li>Estimate trip cost and fuel consumption</li>
+                <li>Provide a simple and user-friendly platform</li>
+              </ul>
+            </article>
+
+            <article class="card feature-card fade-in">
+              <span class="icon-badge" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="3" y1="9" x2="21" y2="9"></line>
+                  <line x1="9" y1="21" x2="9" y2="9"></line>
+                </svg>
+              </span>
+              <h3 class="feature-title">Methodology</h3>
               <p>
-                Evaluate the system using sample weather, catch, and
-                fishing-travel scenarios to demonstrate usefulness, clarity, and
-                reliability.
+                The system integrates multiple models for different functions.
+                Environmental data is used for fish zone prediction, historical
+                data for price prediction, image data for quality grading, and
+                operational data for cost estimation.
+              </p>
+
+              <p>
+                Machine learning, deep learning, and hybrid models are combined
+                into a unified system to generate real-time predictions and
+                support decision-making.
               </p>
             </article>
 
-            <article class="card fade-in">
-              <h3>Methodology</h3>
+            <article class="card feature-card fade-in">
+              <span class="icon-badge" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </span>
+              <h3 class="feature-title">Technologies Used</h3>
               <p>
-                The research follows a structured flow: problem analysis, data
-                understanding, prototype design, model integration, interface
-                development, and iterative validation.
+                The frontend is developed using HTML, CSS, and JavaScript, with
+                Next.js for server-side rendering and React Native for mobile
+                applications, creating interactive user interfaces across web
+                and mobile platforms. The backend uses Node.js with NestJS
+                framework and APIs for robust data processing and integration.
               </p>
-              <p>
-                Feedback from academic review and testing is used to refine the
-                recommendations, layout, and messaging so the system remains
-                practical in a real setting.
-              </p>
-            </article>
 
-            <article class="card fade-in">
-              <h3>Technologies Used</h3>
               <p>
-                The website uses HTML, CSS, and JavaScript for the presentation
-                layer. The research model layer is designed to work with Python,
-                TensorFlow, data visualization libraries, and connected marine
-                data sources.
+                Machine learning and deep learning models are implemented using
+                Python, TensorFlow, and Scikit-learn, with data processing
+                performed using Pandas and NumPy.
               </p>
-              <p>
-                Future deployment can extend to cloud hosting, API services, and
-                IoT-connected inputs for richer coastal intelligence.
-              </p>
+
+              <div
+                class="tech-chips"
+                style="
+                  display: flex;
+                  flex-wrap: wrap;
+                  gap: 0.6rem;
+                  margin-top: 0.5rem;
+                "
+              >
+                <span class="chip"
+                  ><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                    width="16"
+                    height="16"
+                    alt="HTML5"
+                    style="display: inline-block; margin-right: 0.35rem"
+                  />
+                  HTML</span
+                >
+                <span class="chip"
+                  ><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                    width="16"
+                    height="16"
+                    alt="CSS3"
+                    style="display: inline-block; margin-right: 0.35rem"
+                  />
+                  CSS</span
+                >
+                <span class="chip"
+                  ><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                    width="16"
+                    height="16"
+                    alt="JavaScript"
+                    style="display: inline-block; margin-right: 0.35rem"
+                  />
+                  JavaScript</span
+                >
+                <span class="chip"
+                  ><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+                    width="16"
+                    height="16"
+                    alt="Next.js"
+                    style="display: inline-block; margin-right: 0.35rem"
+                  />
+                  Next.js</span
+                >
+                <span class="chip"
+                  ><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                    width="16"
+                    height="16"
+                    alt="React Native"
+                    style="display: inline-block; margin-right: 0.35rem"
+                  />
+                  React Native</span
+                >
+                <span class="chip"
+                  ><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                    width="16"
+                    height="16"
+                    alt="Node.js"
+                    style="display: inline-block; margin-right: 0.35rem"
+                  />
+                  Node.js</span
+                >
+                <span class="chip"
+                  ><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg"
+                    width="16"
+                    height="16"
+                    alt="NestJS"
+                    style="display: inline-block; margin-right: 0.35rem"
+                  />
+                  NestJS</span
+                >
+                <span class="chip"
+                  ><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                    width="16"
+                    height="16"
+                    alt="Python"
+                    style="display: inline-block; margin-right: 0.35rem"
+                  />
+                  Python</span
+                >
+                <span class="chip"
+                  ><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
+                    width="16"
+                    height="16"
+                    alt="TensorFlow"
+                    style="display: inline-block; margin-right: 0.35rem"
+                  />
+                  TensorFlow</span
+                >
+                <span class="chip"
+                  ><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg"
+                    width="16"
+                    height="16"
+                    alt="Scikit-learn"
+                    style="display: inline-block; margin-right: 0.35rem"
+                  />
+                  Scikit-learn</span
+                >
+                <span class="chip"
+                  ><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg"
+                    width="16"
+                    height="16"
+                    alt="Pandas"
+                    style="display: inline-block; margin-right: 0.35rem"
+                  />
+                  Pandas</span
+                >
+                <span class="chip"
+                  ><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"
+                    width="16"
+                    height="16"
+                    alt="NumPy"
+                    style="display: inline-block; margin-right: 0.35rem"
+                  />
+                  NumPy</span
+                >
+              </div>
             </article>
           </div>
         </div>

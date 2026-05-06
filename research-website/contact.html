@@ -52,6 +52,7 @@
         <ul class="nav-links" id="navLinks">
           <li><a href="index.html">Home</a></li>
           <li><a href="domain.html">Domain</a></li>
+          <li><a href="solution.html">Solution</a></li>
           <li><a href="milestones.html">Milestones</a></li>
           <li><a href="documents.html">Documents</a></li>
           <li><a href="presentations.html">Presentations</a></li>
@@ -97,7 +98,7 @@
             </div>
             <div class="contact-line">
               <strong>Email</strong>
-              <span class="muted">it22215574@my.sliit.lk</span>
+              <span class="muted">Ravindujayaweera123@gmail.com</span>
             </div>
             <div class="contact-line">
               <strong>Phone</strong>
@@ -115,7 +116,106 @@
             </div>
           </article>
 
-          
+          <form
+            class="form-card fade-in"
+            id="contactForm"
+            action="https://formsubmit.co/Ravindujayaweera123@gmail.com"
+            method="POST"
+            target="contactSubmitFrame"
+            data-recipient-email="Ravindujayaweera123@gmail.com"
+          >
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <input
+              type="hidden"
+              name="_subject"
+              value="Smart Fisher Lanka contact message"
+              data-form-subject
+            />
+            <div class="section-heading">
+              <span class="eyebrow">Send Message</span>
+              <h2 class="section-title">Contact us</h2>
+              <p class="section-lead">
+                Fill in your details and send your message directly to the
+                project email.
+              </p>
+            </div>
+
+            <div class="form-row">
+              <label for="name">Name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                autocomplete="name"
+                placeholder="Enter your name"
+                required
+              />
+              <span class="error" id="nameError" aria-live="polite"></span>
+            </div>
+
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                placeholder="Enter your email"
+                required
+              />
+              <span class="error" id="emailError" aria-live="polite"></span>
+            </div>
+
+            <div class="form-row">
+              <label for="subject">Subject</label>
+              <input
+                id="subject"
+                name="subject"
+                type="text"
+                placeholder="Project demo or collaboration"
+              />
+            </div>
+
+            <div class="form-row">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="6"
+                placeholder="Write your message"
+                required
+              ></textarea>
+              <span class="error" id="messageError" aria-live="polite"></span>
+            </div>
+
+            <button class="btn btn-primary" id="contactSubmitBtn" type="submit">
+              Send Email
+            </button>
+            <p class="success-message" id="formMessage" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+      <div
+        class="mail-popup"
+        data-mail-popup
+        role="status"
+        aria-live="polite"
+        aria-hidden="true"
+      >
+        <div class="mail-popup__icon" aria-hidden="true">@</div>
+        <div>
+          <strong>Mail app opening</strong>
+          <span>Your message is ready to send.</span>
+        </div>
+      </div>
+      <iframe
+        class="contact-submit-frame"
+        name="contactSubmitFrame"
+        title="Contact form submission"
+        aria-hidden="true"
+      ></iframe>
     </main>
 
     <footer class="site-footer">
@@ -140,7 +240,7 @@
       </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>
+
